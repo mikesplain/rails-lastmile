@@ -47,6 +47,8 @@ template "/etc/unicorn.cfg" do
   variables( :app_dir => app_dir)
 end
 
+include_recipe "mysql"
+
 rbenv_script "run-rails" do
   rbenv_version "1.9.3-p286"
   cwd app_dir
